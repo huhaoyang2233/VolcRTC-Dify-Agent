@@ -1,0 +1,87 @@
+{
+  "SceneConfig": {
+    "icon": "https://lf3-rtc-demo.volccdn.com/obj/rtc-aigc-assets/DoubaoAvatar.png",
+    "name": "自定义助手"
+  },
+  "AccountConfig": {
+    "accessKeyId": "YOUR_ACCESS_KEY_ID",
+    "secretKey": "YOUR_SECRET_KEY",
+    "host":"rtc.volcengineapi.com",
+    "service": "rtc",
+    "version": "2024-12-01",
+    "region":"cn-north-1"
+
+  },
+  "RTCConfig": {
+    "AppId": "YOUR_RTC_APP_ID",
+    "AppKey": "YOUR_RTC_APP_KEY",
+    "RoomId": "",
+    "UserId": "",
+    "Token": ""
+  },
+  "VoiceChat": {
+    "AppId": "",
+    "RoomId": "",
+    "TaskId": "",
+    "AgentConfig": {
+      "TargetUserId": [
+        ""
+      ],
+      "WelcomeMessage": "",
+      "UserId": "",
+      "EnableConversationStateCallback": true,
+      "AnsMode": 2
+    },
+    "Config": {
+      "ASRConfig": {
+        "Provider": "volcano",
+        "ProviderParams": {
+          "Mode": "smallmodel",
+          "AppId": "YOUR_ASR_APP_ID",
+          "Cluster": "volcengine_streaming_common"
+        },
+      "VADConfig":{
+        "SilenceTime":800
+      },
+      "InterruptConfig": {
+        "InterruptSpeechDuration": 300
+      }
+      },
+      "TTSConfig": {
+          "IgnoreBracketText": [
+              1,
+              2,
+              3,
+              4,
+              5
+          ],
+          "Provider": "volcano_bidirection",
+          "ProviderParams": {
+              "app": {
+                  "appid": "YOUR_TTS_APP_ID",
+                  "token": "YOUR_TTS_TOKEN"
+              },
+              "audio": {
+                  "voice_type": "zh_female_sajiaonvyou_moon_bigtts",
+                  "speech_rate": 0,
+                  "pitch_ratio": 1,
+                  "volume_ratio": 1
+              },
+              "ResourceId": "volc.service_type.10029"
+          }
+          }
+      },
+      "LLMConfig": {
+        "Mode": "CustomLLM",
+        "Url": "YOUR_LLM_API_URL",
+        "APIKey": "",
+        "ModelName": "",
+        "VisionConfig": {
+          "Enable": false
+        },
+        "Feature": "{\"Http\":true}"
+      },
+      "InterruptMode": 0
+    }
+  }
+}
